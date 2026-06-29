@@ -4,14 +4,14 @@ import { ShieldCheck, Zap, Lock, ArrowRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 export const SuperAdminLoginPage = () => {
-  const [email, setEmail] = useState('kushal@forgeflow.io');
-  const [password, setPassword] = useState('••••••••••••');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { loginSuperAdmin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginSuperAdmin(email, password);
+    loginSuperAdmin(email || 'kushal@forgeflow.io', password);
     navigate('/admin/dashboard');
   };
 
@@ -45,7 +45,9 @@ export const SuperAdminLoginPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="kushal@forgeflow.io"
                   className="w-full bg-[#1e1f26] border border-[#464554]/60 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#6366f1] pl-10"
+                  required
                 />
                 <ShieldCheck className="w-4 h-4 text-[#6366f1] absolute left-3.5 top-3.5" />
               </div>
@@ -58,7 +60,9 @@ export const SuperAdminLoginPage = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter access password"
                   className="w-full bg-[#1e1f26] border border-[#464554]/60 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#6366f1] pl-10"
+                  required
                 />
                 <Lock className="w-4 h-4 text-[#908fa0] absolute left-3.5 top-3.5" />
               </div>

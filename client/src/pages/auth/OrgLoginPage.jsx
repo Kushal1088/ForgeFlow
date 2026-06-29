@@ -5,8 +5,8 @@ import { useAuth } from '../../context/AuthContext';
 import { AuthConfirmModal } from '../../components/common/AuthConfirmModal';
 
 export const OrgLoginPage = () => {
-  const [email, setEmail] = useState('admin@forgeflow.io');
-  const [password, setPassword] = useState('••••••••••••');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [role, setRole] = useState('owner');
   const [confirmModalOpen, setConfirmModalOpen] = useState(false);
 
@@ -86,6 +86,7 @@ export const OrgLoginPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="admin@forgeflow.io"
                   className="w-full bg-[#12131a] border border-[#464554]/60 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#6366f1] pl-10"
                   required
                 />
@@ -100,6 +101,7 @@ export const OrgLoginPage = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your workspace password"
                   className="w-full bg-[#12131a] border border-[#464554]/60 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#6366f1] pl-10"
                   required
                 />
