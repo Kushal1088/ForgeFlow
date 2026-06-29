@@ -39,13 +39,13 @@ export const AboutPage = () => {
             <p className="text-xs text-[#908fa0]">Full Stack MERN & SaaS Software Engineer</p>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="bg-[#12131a] hover:bg-[#282a31] border border-[#464554] p-2 sm:p-2.5 rounded-xl text-white transition-colors flex items-center gap-1.5 font-mono text-xs" title="GitHub">
+            <a href="https://github.com/Kushal1088" target="_blank" rel="noopener noreferrer" className="bg-[#12131a] hover:bg-[#282a31] border border-[#464554] p-2 sm:p-2.5 rounded-xl text-white transition-colors flex items-center gap-1.5 font-mono text-xs" title="GitHub">
               <Terminal className="w-4 h-4 text-[#6366f1]" /> GitHub
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-[#12131a] hover:bg-[#282a31] border border-[#464554] p-2 sm:p-2.5 rounded-xl text-white transition-colors flex items-center gap-1.5 font-mono text-xs" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/pandeykushal1/" target="_blank" rel="noopener noreferrer" className="bg-[#12131a] hover:bg-[#282a31] border border-[#464554] p-2 sm:p-2.5 rounded-xl text-white transition-colors flex items-center gap-1.5 font-mono text-xs" title="LinkedIn">
               <Share2 className="w-4 h-4 text-[#6366f1]" /> LinkedIn
             </a>
-            <a href="https://kushalpandey.dev" target="_blank" rel="noopener noreferrer" className="bg-[#6366f1] hover:bg-[#8083ff] p-2 sm:p-2.5 rounded-xl text-white shadow-glow transition-all flex items-center gap-1.5 font-mono text-xs" title="Portfolio">
+            <a href="https://kushalportfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-[#6366f1] hover:bg-[#8083ff] p-2 sm:p-2.5 rounded-xl text-white shadow-glow transition-all flex items-center gap-1.5 font-mono text-xs" title="Portfolio">
               <Globe className="w-4 h-4" /> Portfolio
             </a>
           </div>

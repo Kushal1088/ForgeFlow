@@ -599,8 +599,23 @@ export const LandingPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#464554]/30 px-4 sm:px-8 py-6 text-center text-xs text-[#908fa0] font-mono">
-        Designed & Developed by <strong className="text-white">Kushal Pandey</strong> • © 2026 ForgeFlow SaaS Platform
+      <footer className="border-t border-[#464554]/30 px-4 sm:px-8 py-6 text-center text-xs text-[#908fa0] font-mono space-y-3">
+        <div>
+          Designed & Developed by <a href="https://kushalportfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#6366f1] underline transition-colors">Kushal Pandey</a> • © 2026 ForgeFlow SaaS Platform
+        </div>
+        <div className="flex items-center justify-center gap-4 text-[11px]">
+          <a href="https://github.com/Kushal1088" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+            GitHub
+          </a>
+          <span className="text-[#464554]">•</span>
+          <a href="https://www.linkedin.com/in/pandeykushal1/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+            LinkedIn
+          </a>
+          <span className="text-[#464554]">•</span>
+          <a href="https://kushalportfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+            Portfolio
+          </a>
+        </div>
       </footer>
     </div>
   );

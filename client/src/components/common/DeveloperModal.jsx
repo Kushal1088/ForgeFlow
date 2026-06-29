@@ -41,9 +41,9 @@ export const DeveloperModal = ({ isOpen, onClose }) => {
             <p className="text-xs text-[#908fa0]">Full Stack MERN & SaaS Engineer</p>
           </div>
           <div className="flex items-center gap-3 text-[#908fa0]">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="GitHub"><Terminal className="w-4 h-4" /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="LinkedIn"><Share2 className="w-4 h-4" /></a>
-            <a href="https://kushalpandey.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="Portfolio"><Globe className="w-4 h-4" /></a>
+            <a href="https://github.com/Kushal1088" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="GitHub"><Terminal className="w-4 h-4 text-[#6366f1]" /></a>
+            <a href="https://www.linkedin.com/in/pandeykushal1/" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="LinkedIn"><Share2 className="w-4 h-4 text-[#6366f1]" /></a>
+            <a href="https://kushalportfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-white" title="Portfolio"><Globe className="w-4 h-4 text-[#6366f1]" /></a>
           </div>
         </div>
 

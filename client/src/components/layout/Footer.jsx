@@ -22,7 +22,7 @@ export const Footer = () => {
         
         <div className="flex items-center gap-3">
           <a 
-            href="https://github.com" 
+            href="https://github.com/Kushal1088" 
             target="_blank" 
             rel="noopener noreferrer"
             title="GitHub Portfolio"
@@ -31,7 +31,7 @@ export const Footer = () => {
             <Terminal className="w-3.5 h-3.5 text-[#6366f1]" /> GitHub
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/pandeykushal1/" 
             target="_blank" 
             rel="noopener noreferrer"
             title="LinkedIn Profile"
@@ -40,7 +40,7 @@ export const Footer = () => {
             <Share2 className="w-3.5 h-3.5 text-[#6366f1]" /> LinkedIn
           </a>
           <a 
-            href="https://kushalpandey.dev" 
+            href="https://kushalportfolio.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer"
             title="Developer Portfolio"
