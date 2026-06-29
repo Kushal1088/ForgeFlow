@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config/api';
 
 const AuthContext = createContext();
 
@@ -57,18 +58,30 @@ export const AuthProvider = ({ children }) => {
     setIsSuperAdmin(false);
   };
 
-  const loginOrgUser = (email, password, selectedRole = 'owner') => {
-    setUser({
-      id: 'usr_demo_123',
+  const loginOrgUser = async (email, password, selectedRole = 'owner') => {
+    const userObj = {
+      id: 'usr_' + Date.now(),
       name: email ? email.split('@')[0] : 'Alex Mercer',
       email: email || 'admin@forgeflow.io',
       role: selectedRole,
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'
-    });
+    };
+    setUser(userObj);
+
+    // Persist to MongoDB Atlas backend
+    try {
+      await fetch(`${API_BASE_URL}/api/v1/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: userObj.email, role: selectedRole })
+      });
+    } catch (err) {
+      console.error('Failed to sync login to MongoDB:', err);
+    }
     return true;
   };
 
-  const registerOrganization = (orgName, ownerEmail) => {
+  const registerOrganization = async (orgName, ownerEmail, password) => {
     const newOrg = {
       id: `org_${Date.now()}`,
       name: orgName,
@@ -79,15 +92,28 @@ export const AuthProvider = ({ children }) => {
       workflows: 0,
       mrr: '$0'
     };
-    setOrganizations([...organizations, newOrg]);
-    setCurrentOrg(newOrg);
-    setUser({
+    const newUserObj = {
       id: `usr_${Date.now()}`,
       name: ownerEmail.split('@')[0],
       email: ownerEmail,
       role: 'owner',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'
-    });
+    };
+
+    setOrganizations(prev => [...prev, newOrg]);
+    setCurrentOrg(newOrg);
+    setUser(newUserObj);
+
+    // Persist Organization & User directly to MongoDB Atlas
+    try {
+      await fetch(`${API_BASE_URL}/api/v1/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orgName, email: ownerEmail, password: password || 'kushal1088' })
+      });
+    } catch (err) {
+      console.error('Failed to register account in MongoDB Atlas:', err);
+    }
   };
 
   const logoutOrgUser = () => {

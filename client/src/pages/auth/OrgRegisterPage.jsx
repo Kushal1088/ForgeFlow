@@ -13,7 +13,7 @@ export const OrgRegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!orgName || !email) return;
-    registerOrganization(orgName, email);
+    registerOrganization(orgName, email, password);
     navigate('/app');
   };
 

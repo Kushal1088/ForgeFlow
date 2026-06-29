@@ -33,7 +33,7 @@ export const SignupPage = () => {
     }
 
     setErrorMsg('');
-    registerOrganization(orgName, workEmail);
+    registerOrganization(orgName, workEmail, password);
     setShowWizard(true);
   };
 
