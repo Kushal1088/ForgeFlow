@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Workflow, Plus, Play, MoreVertical, Layers, CheckCircle2, AlertCircle, Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
 export const WorkflowsPage = () => {
   const [workflows, setWorkflows] = useState([]);
@@ -10,7 +11,7 @@ export const WorkflowsPage = () => {
   const navigate = useNavigate();
 
   const fetchWorkflows = () => {
-    fetch('http://localhost:5000/api/v1/workflows')
+    fetch(`${API_BASE_URL}/api/v1/workflows`)
       .then(res => res.json())
       .then(d => { setWorkflows(d.workflows || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -24,7 +25,7 @@ export const WorkflowsPage = () => {
     e.stopPropagation();
     setExecutingId(wfId);
     try {
-      const res = await fetch(`http://localhost:5000/api/v1/workflows/${wfId}/execute`, {
+      const res = await fetch(`${API_BASE_URL}/api/v1/workflows/${wfId}/execute`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ payload: { amount: 12500, requester: 'Finance Dept' } })
@@ -40,7 +41,7 @@ export const WorkflowsPage = () => {
   };
 
   const handleCreateNew = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/workflows', {
+    const res = await fetch(`${API_BASE_URL}/api/v1/workflows`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

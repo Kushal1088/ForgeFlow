@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PlaySquare, CheckCircle2, AlertCircle, Clock, ChevronRight, Check, X } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 export const ExecutionsPage = () => {
   const [executions, setExecutions] = useState([]);
@@ -7,7 +8,7 @@ export const ExecutionsPage = () => {
   const [selectedExec, setSelectedExec] = useState(null);
 
   const fetchExecutions = () => {
-    fetch('http://localhost:5000/api/v1/executions')
+    fetch(`${API_BASE_URL}/api/v1/executions`)
       .then(res => res.json())
       .then(data => {
         setExecutions(data.executions || []);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 import { 
   ArrowLeft, 
   Save, 
@@ -19,7 +20,8 @@ import {
   Clock,
   Sparkles,
   Bot,
-  Brain
+  Brain,
+  Lock
 } from 'lucide-react';
 import { ConfirmModal } from '../components/common/ConfirmModal';
 import { AICopilotModal } from '../components/common/AICopilotModal';
@@ -38,7 +40,7 @@ export const WorkflowBuilderPage = () => {
   const [aiModalOpen, setAiModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/v1/workflows/${id}`)
+    fetch(`${API_BASE_URL}/api/v1/workflows/${id}`)
       .then(res => res.json())
       .then(data => {
         setWorkflow(data);

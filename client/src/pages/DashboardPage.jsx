@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
 export const DashboardPage = () => {
   const [data, setData] = useState(null);
@@ -19,7 +20,7 @@ export const DashboardPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/v1/analytics/dashboard')
+    fetch(`${API_BASE_URL}/api/v1/analytics/dashboard`)
       .then(res => res.json())
       .then(d => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));

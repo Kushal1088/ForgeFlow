@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ShieldCheck, User, Shield, Search } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 export const AuditLogsPage = () => {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/v1/audit-logs')
+    fetch(`${API_BASE_URL}/api/v1/audit-logs`)
       .then(res => res.json())
       .then(data => { setLogs(data.logs || []); setLoading(false); })
       .catch(() => setLoading(false));
