@@ -33,6 +33,7 @@ import { IntegrationsPage } from './pages/IntegrationsPage';
 import { AuditLogsPage } from './pages/AuditLogsPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { AboutPage } from './pages/AboutPage';
+import { AICopilotPage } from './pages/AICopilotPage';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/app/register" element={<OrgRegisterPage />} />
 
             {/* Seamless Redirects for Direct URL Navigation */}
+            <Route path="/copilot" element={<Navigate to="/app/copilot" replace />} />
             <Route path="/about" element={<Navigate to="/app/about" replace />} />
             <Route path="/workflows" element={<Navigate to="/app/workflows" replace />} />
             <Route path="/executions" element={<Navigate to="/app/executions" replace />} />
@@ -75,6 +77,7 @@ export default function App() {
             {/* Portal 2: Organization Tenant SaaS Workspace */}
             <Route path="/app" element={<OrgRouteGuard><TenantLayout /></OrgRouteGuard>}>
               <Route index element={<DashboardPage />} />
+              <Route path="copilot" element={<AICopilotPage />} />
               <Route path="workflows" element={<WorkflowsPage />} />
               <Route path="workflows/builder/:id" element={<WorkflowBuilderPage />} />
               <Route path="executions" element={<ExecutionsPage />} />

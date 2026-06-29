@@ -11,7 +11,8 @@ import {
   Plug,
   Activity,
   Menu,
-  X
+  X,
+  Sparkles
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { SystemStatusModal } from '../common/SystemStatusModal';
@@ -25,6 +26,7 @@ export const Sidebar = () => {
 
   const navItems = [
     { name: 'Dashboard', path: '/app', icon: LayoutDashboard },
+    { name: 'AI Copilot', path: '/app/copilot', icon: Sparkles },
     { name: 'Workflows', path: '/app/workflows', icon: Workflow },
     { name: 'Execution Runs', path: '/app/executions', icon: PlaySquare },
     { name: 'Integrations', path: '/app/integrations', icon: Plug },

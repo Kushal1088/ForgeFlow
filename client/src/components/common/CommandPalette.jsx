@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Workflow, PlaySquare, ShieldCheck, Settings, X, ArrowRight } from 'lucide-react';
+import { Search, Workflow, PlaySquare, ShieldCheck, Settings, X, ArrowRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const CommandPalette = ({ isOpen, onClose }) => {
@@ -23,10 +23,11 @@ export const CommandPalette = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const actions = [
-    { name: 'Create New Workflow', category: 'Workflows', icon: Workflow, action: () => navigate('/workflows') },
-    { name: 'View Active Execution Runs', category: 'Executions', icon: PlaySquare, action: () => navigate('/executions') },
-    { name: 'Security & Audit Trail', category: 'Audit', icon: ShieldCheck, action: () => navigate('/audit-logs') },
-    { name: 'Manage Team Roles (RBAC)', category: 'Settings', icon: Settings, action: () => navigate('/settings') },
+    { name: 'AI Copilot Intelligence Core', category: 'AI Engine', icon: Sparkles, action: () => navigate('/app/copilot') },
+    { name: 'Create New Workflow', category: 'Workflows', icon: Workflow, action: () => navigate('/app/workflows') },
+    { name: 'View Active Execution Runs', category: 'Executions', icon: PlaySquare, action: () => navigate('/app/executions') },
+    { name: 'Security & Audit Trail', category: 'Audit', icon: ShieldCheck, action: () => navigate('/app/audit-logs') },
+    { name: 'Manage Team Roles (RBAC)', category: 'Settings', icon: Settings, action: () => navigate('/app/settings') },
   ];
 
   const filtered = actions.filter(a => a.name.toLowerCase().includes(query.toLowerCase()));
