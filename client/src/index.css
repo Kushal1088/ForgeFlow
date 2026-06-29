@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* Dark Theme (Default) */
+body {
+  margin: 0;
+  background-color: #12131a;
+  color: #e2e1eb;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Premium Light Theme Overrides */
+.light-theme,
+body.light-theme {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+.light-theme .bg-\[\#12131a\],
+.light-theme .bg-\[\#090a0f\],
+.light-theme .bg-\[\#1a1b22\],
+body.light-theme .bg-\[\#12131a\],
+body.light-theme .bg-\[\#090a0f\],
+body.light-theme .bg-\[\#1a1b22\] {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+.light-theme .bg-\[\#1e1f26\],
+body.light-theme .bg-\[\#1e1f26\] {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .bg-\[\#282a31\],
+body.light-theme .bg-\[\#282a31\] {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.light-theme .text-white,
+body.light-theme .text-white {
+  color: #0f172a !important;
+}
+
+.light-theme .text-\[\#e2e1eb\],
+body.light-theme .text-\[\#e2e1eb\] {
+  color: #334155 !important;
+}
+
+.light-theme .text-\[\#908fa0\],
+body.light-theme .text-\[\#908fa0\] {
+  color: #64748b !important;
+}
+
+.light-theme .border-\[\#464554\],
+.light-theme .border-\[\#464554\]\/30,
+.light-theme .border-\[\#464554\]\/40,
+.light-theme .border-\[\#464554\]\/50,
+.light-theme .border-\[\#464554\]\/60,
+body.light-theme .border-\[\#464554\],
+body.light-theme .border-\[\#464554\]\/30,
+body.light-theme .border-\[\#464554\]\/40,
+body.light-theme .border-\[\#464554\]\/50,
+body.light-theme .border-\[\#464554\]\/60 {
+  border-color: #cbd5e1 !important;
+}
+
+.light-theme aside,
+.light-theme header,
+body.light-theme aside,
+body.light-theme header {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #12131a;
+}
+::-webkit-scrollbar-thumb {
+  background: #282a31;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #464554;
+}
